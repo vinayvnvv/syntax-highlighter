@@ -52,6 +52,13 @@ var GUISyntax = function() {
   }
 
 
+  this.highletSyntaxAll = function(class_name) {
+    var elms = document.querySelectorAll("." + class_name);
+    for(var i=0;i<elms.length;i++)
+      this.highletSyntax(elms[i], 'html');
+  }
+
+
   this.highletSyntax = function(elmnt, mode) {
   var lang = (mode || "html");
   var elmntObj = (document.getElementById(elmnt) || elmnt);
@@ -385,15 +392,3 @@ var GUISyntax = function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-// var syntax = new GUISyntax();
-// syntax.highletSyntax(document.getElementById("myDiv"), "html")
